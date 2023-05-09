@@ -1,0 +1,43 @@
+Acceptance Criteria.
+
+1. New Pre chat forms has to be created to and embedded in the CCleaner Website to Support Live Chat feature on CCleaner Website for Premium Customers.
+
+below Fields needs to be present on the Pre-chat Form
+
+First Name 
+
+Last Name 
+
+Email
+
+2. Case via Live Agent Chat will have the Description Hardcoded to 
+
+"CCleaner Premium Chat".
+
+3. CCleaner  Pre Chat Form(Salesforce Visual Force Page)  will need to be Embedded in the CCleaner Website.
+
+4. Customer Email Authentication to validate if it is a Premium Customer will be taken care by the CCleaner Website authentication Process.
+
+5. Omni Channel Routing needs to be set up to route the Live Agent Chat Requests to CCleaner T2 Agents.
+
+6.Routing Happens only for Agents whose Chat Status is Available any Chat Status other than available Status will not be receiving the call for Incoming Chat Request.
+
+7. As soon as the Agent accepts the incoming chat a Case is created. If the email is not available in the Avast Salesforce Instance  a new Account and Contact is created followed by a new Case creation.
+
+Else only Case is created and associated to existing Contact.
+
+8. Case Source Info should be set as : CH::CCleaner_Site_Premium_Support.
+
+9.Case Origin: Chat ,Case Priority : Urgent.
+
+10. There is no acknowledgement Email Sent to Customer and there wont be any Assignment Rule since an Omni Channel Routing rule will be setup.
+
+11. In case of Escalation Current Agent should  manually invite a CCleaner T3 Agent and he should be able to Continue with the Chat.
+
+12 There needs to be a specific Chat Permission to be given to the Agent who will support Live agent Chat. Anyone Part of CCleaner T2 and CCleaner T3 Queue should be assigned the Permission.
+
+13.Once the case Is Resolved agent has to manually Close the Ticket and a Closure email would be sent to Customer.
+
+14. Live Agent Chat support will only be for CCleaner Consumer Products. Record Type : CCleaner - Consumer.
+
+15.There will be a Timer of 30 seconds setup to the Agent to accept the Chat incase Agent if the Agent doesn't accept it will be routed to Next available Agent.
