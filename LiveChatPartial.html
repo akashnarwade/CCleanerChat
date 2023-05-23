@@ -28,6 +28,110 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+		 // CRM customisation - start
+			 embedded_svc.settings.extraPrechatFormDetails = [
+			 {
+			 "label": "CaseOrigin",
+			 "value": "Chat",
+			 "displayToAgent": true
+			 },
+			 {
+			 "label": "CaseSubject",
+			 "value": "CCleaner Premium Chat",
+			 "displayToAgent": true
+			 },
+			 {
+			 "label": "CaseSourceInfo",
+			 "value": "CH::CCleaner_Site_Premium_Support",
+			 "displayToAgent": true
+			 },
+			  {
+			 "label": "CasePriority",
+			 "value": "Urgent",
+			 "displayToAgent": true
+			 }];
+			 embedded_svc.settings.extraPrechatInfo = [
+			 {
+			 "entityName":"Contact",
+			 "showOnCreate": true,
+			 "saveToTranscript": "ContactId",
+			 "entityFieldMaps":
+			 [
+			 {
+			 "doCreate":true,
+			 "doFind":false,
+			 "fieldName":"LastName",
+			 "isExactMatch":false,
+			 "label":"Last Name"
+			 },
+			 {
+			 "doCreate":true,
+			 "doFind":false,
+			 "fieldName":"FirstName",
+			 "isExactMatch":false,
+			 "label":"First Name"
+			 },
+			 {
+			 "doCreate":true,
+			 "doFind":true,
+			 "fieldName":"Email",
+			 "isExactMatch":true,
+			 "label":"Email"
+			 }
+			 ]
+			 },
+			 {
+			 "entityName":"Case",
+			 "showOnCreate": true,
+			 "saveToTranscript": "CaseId",
+			"entityFieldMaps":
+			 [
+			 {
+			 "isExactMatch": false,
+			 "fieldName": "Origin",
+			 "doCreate": true,
+			 "doFind": false,
+			 "label": "CaseOrigin"
+			 },
+			 {
+			 "fieldName": "First_Name__c",
+			 "doCreate": true,
+			 "doFind": false,
+			 "label": "First Name"
+			 },
+			 {
+			 "fieldName": "Source_Info__c",
+			 "doCreate": true,
+			 "doFind": false,
+			 "label": "CaseSourceInfo"
+			 },
+			 {
+			 "fieldName": "Last_Name__c",
+			 "doCreate": true,
+			 "doFind": false,
+			 "label": "Last Name"
+			 },
+			 {
+			 "fieldName": "SuppliedEmail",
+			 "doCreate": true,
+			 "doFind": false,
+			 "label": "Email"
+			 },
+		         {
+			 "fieldName": "Subject",
+			 "doCreate": true,
+			 "doFind": false,
+			 "label": "CaseSubject"
+			 },
+			  {
+			 "fieldName": "Priority",
+			 "doCreate": true,
+			 "doFind": false,
+			 "label": "CasePriority"
+			 },
+			 ]
+			 }];
+			 // CRM customisation - end
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
